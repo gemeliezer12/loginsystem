@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+input, button{
+    outline: none;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+main{
+    padding-top: 60px;
+}
+
+nav{
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    background-color: white;
+}
+
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .profile{
+    outline: none;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(200, 208, 215);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 180px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+nav .profile:hover{
+    border-bottom: none;
+    border: 2px solid rgb(180, 188, 195);
+}
+
+nav .profile.hide{
+    display: flex;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid rgb(180, 188, 195);
+}
+
+nav .profile .label{
+    display: flex;
+    align-items: center;
+}
+
+.profile .options.hide{
+    display: none;
+}
+
+.profile .options{
+    position: absolute;
+    left: calc(0% - 2px);
+    top: calc(100% - 2px);
+    background-color: white;
+    background-color: rgb(200, 208, 215);
+    color: white;
+    width: 180px;
+    display: flex;
+    padding: 12px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: default;
+    text-align: left;
+    border-top: none;
+    border: 2px solid rgb(180, 188, 195);
+    color: white;;
+    border-top: none;
+    transition: all 0.2s ease;
+    list-style: none;
+    flex-direction: column;
+}
+
+.profile .options a{
+    color: white;
+}
+
+.profile .options input,
+.profile .options div{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    width: 100%;
+    padding: 6px;
+    text-align: left;
+}
+
+.log-sign a{
+    padding: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.log-sign .log-link{
+    border: 2px solid rgb(200, 208, 215);
+    background-color: rgb(200, 208, 215);
+    color: white;
+}
+
+.log-sign .sign-link{
+    color: rgb(200, 208, 215);
+}
+
+.label .picture{
+    margin-right: 8px;
+}
+
+.label p{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+nav .profile .picture{
+    height: 30px;
+}
+
+nav .logo{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(200, 208, 215);
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.login-container,
+.signup-container{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+    margin-top: 90px;
+    max-width: 400px;
+    color: rgb(200, 208, 215);
+    border-radius: 15px;
+}
+
+.login-container .title,
+.signup-container .title{
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.login-form,
+.signup-form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.login-form input,
+.signup-form input{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid rgb(200, 208, 215);
+}
+
+
+.login-form .login-btn,
+.signup-form .signup-btn{
+    width: auto;
+    font-weight: 900;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(200, 208, 215);
+}
+
+.login-container a,
+.signup-container a{
+    font-size: 12px;
+}
