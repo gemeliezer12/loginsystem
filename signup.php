@@ -1,6 +1,4 @@
 <?php
-include "inc/dbh.inc.php";
-include "inc/signup.inc.php";
 include "header.php";
 
 if(isset($_SESSION["idUsers"])){

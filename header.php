@@ -34,7 +34,7 @@ $user = new User;
                     <i class="fas fa-caret-down fa-2x"></i>
                     <div class="options hide">
                         <div>
-                            <a href="">Edit Profile</a>
+                            <a href="edit.php">Edit Profile</a>
                         </div>
                         <form action="inc/logout.inc.php">
                             <input type="submit" name="logout-submit" value="Logout">
