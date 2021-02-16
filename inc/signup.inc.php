@@ -41,6 +41,7 @@ if(isset($_POST["signup-submit"])){
             $query->bindValue(3, $hashedPwd);
 
             $query->execute();
+
             header("Location: ../signup.php?signup=success");
             exit();
         }

@@ -7,6 +7,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    outline: none;
 }
 
 input, button{
@@ -169,10 +170,10 @@ nav .logo{
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: white;
-    margin-top: 90px;
     max-width: 400px;
     color: rgb(200, 208, 215);
     border-radius: 15px;
+    margin-top: 90px;
 }
 
 .login-container .title,
@@ -219,4 +220,126 @@ input{
 .login-container a,
 .signup-container a{
     font-size: 12px;
+}
+
+.profile-section{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 90px;
+    padding-bottom: 25px;
+
+}
+
+.profile-section .cover{
+    background-color: rgb(200, 208, 215);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+.profile-section .info{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profile-section .picture{
+    width: 100px;
+    margin-top: -50px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+
+}
+.picture img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile-section .info .uid{
+    font-size: 25px;
+}
+
+.profile-section .info .bio{
+    margin-top: 10px;
+}
+
+.edit-profile{
+    margin-top: 90px;
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.edit-profile .input{
+    border: 1px solid rgb(200, 208, 215);
+}
+
+.edit-profile label{
+    display: block;
+    font-size: 12px;
+}
+
+.edit-profile .input{
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.edit-profile label{
+    margin-bottom: 10px;
+}
+
+.edit-profile textarea{
+    height: 60px;
+}
+
+.edit-profile textarea, .edit-profile input{
+    width: 100%;
+    resize: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.edit-profile .cover{
+    background-color: rgb(200, 208, 215);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+.edit-profile .info{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.edit-profile .picture{
+    width: 100px;
+    margin-top: -50px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.edit-profile .edit-submit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-profile .edit-submit input{
+    width: auto;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px ;
+    background-color: rgb(200, 208, 215);
+    color: white;
+    border-radius: 30px;
 }

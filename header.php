@@ -2,8 +2,27 @@
 session_start();
 include "inc/dbh.inc.php";
 include "class/user.class.php";
+include "class/profile.class.php";
 
 $user = new User;
+$profile = new Profile;
+if(isset($_SESSION["idUsers"])){
+    $id = $_SESSION["idUsers"];
+    $data = $user->fetchData($id);
+    $data2 = $profile->fetchData($id);
+    
+    $query = $pdo->prepare("SELECT * FROM profiles WHERE idUsers = $id");
+    $query->execute();
+
+    $row = $query->rowCount();
+
+    if($row = 0){
+        $query = $pdo->prepare("INSERT INTO profiles(idUsers, uidUsers) VALUES(?, ?)");
+        $query->bindValue(1, $data["idUsers"]);
+        $query->bindValue(2, $data["uidUsers"]);
+        $query->execute();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,18 +42,19 @@ $user = new User;
             </p>
             <?php
             if(isset($_SESSION["idUsers"])){
-                $id = $_SESSION["idUsers"];
-                $data = $user->fetchData($id);
                 ?>
                 <button class="profile">
                     <div class="label">
                         <img class="picture" src="uploads/default.png" alt="">
-                        <p><?php echo $data["uidUsers"]?></p>
+                        <p><?php echo $data["uidUsers"];?></p>
                     </div>
                     <i class="fas fa-caret-down fa-2x"></i>
                     <div class="options hide">
                         <div>
-                            <a href="edit.php">Edit Profile</a>
+                            <a href="my-profile.php">View Profile</a>
+                        </div>
+                        <div>
+                            <a href="edit-profile.php">Edit Profile</a>
                         </div>
                         <form action="inc/logout.inc.php">
                             <input type="submit" name="logout-submit" value="Logout">
