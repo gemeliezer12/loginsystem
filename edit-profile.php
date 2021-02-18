@@ -8,8 +8,8 @@ include "header.php";
         </div>
         <div class="info">
             <div class="picture">
-                
-                <img src="uploads/default.png" alt="">
+                <input id="upload-image" name="image" type="file">
+                <img id="uploaded-image" src="uploads/default.png" alt="">
             </div>
             <div class="input">
                 <label for="uid">Username</label>

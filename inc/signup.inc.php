@@ -42,6 +42,30 @@ if(isset($_POST["signup-submit"])){
 
             $query->execute();
 
+            $query = $pdo->prepare("SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;");
+            $query->bindValue(1, $username);
+            $query->bindValue(2, $email);
+            $query->execute();
+
+            $rowCount = $query->rowCount();
+
+            if($rowCount > 0){
+                $row = $query->fetch();
+
+                session_start();
+                $_SESSION["idUsers"] = $row["idUsers"];
+                $_SESSION["uidUsers"] = $row["uidUsers"];
+
+                
+                $query = $pdo->prepare("INSERT INTO profiles(idUsers, uidUsers) VALUES(?, ?)");
+                $query->bindValue(1, $_SESSION["idUsers"]);
+                $query->bindValue(2, $_SESSION["uidUsers"]);
+                $query->execute();
+
+                header("Location: ../edit-profile.php?login=success");
+                exit();
+            }
+
             header("Location: ../signup.php?signup=success");
             exit();
         }

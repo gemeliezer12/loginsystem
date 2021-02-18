@@ -11,15 +11,16 @@ else{
             <div class="cover">
             </div>
             <div class="info">
-                
+                <div class="picture">
                 <img src="uploads/<?php
-                if(empty($data2["coverProfiles"])){
-                    ?>default.png<?php
-                }
-                else{
-                    echo $data2["pictureProfiles"];
-                }
-                ?>" alt="" class="picture">
+                    if(empty($data2["coverProfiles"])){
+                        ?>default.png<?php
+                    }
+                    else{
+                        echo $data2["pictureProfiles"];
+                    }
+                    ?>" alt="">
+                </div>
                 <p class="uid"><?php echo $data2["uidUsers"];?></p>
                 <?php
                 if(empty($data2["bioProfiles"])){

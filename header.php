@@ -32,6 +32,7 @@ if(isset($_SESSION["idUsers"])){
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <script defer src="js/profile.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
@@ -50,6 +51,9 @@ if(isset($_SESSION["idUsers"])){
                     </div>
                     <i class="fas fa-caret-down fa-2x"></i>
                     <div class="options hide">
+                        <div>
+                            <a href="index.php">Home</a>
+                        </div>
                         <div>
                             <a href="my-profile.php">View Profile</a>
                         </div>
