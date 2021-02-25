@@ -35,13 +35,14 @@ if(isset($_POST["edit-profile-submit"])){
                     $fileNameNew = "profile".$id.".".$fileActualExt;
                     $fileDestination = "../uploads/".$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    $sql = $pdo->prepare("UPDATE profiles SET pictureProfiles=? WHERE uidUsers=?;");
+                    $sql = $pdo->prepare("UPDATE profiles SET pictureProfiles=? WHERE idUsers=?;");
                     $sql->bindValue(1, $fileNameNew);
                     $sql->bindValue(2, $id);
                     $sql->execute();
                     echo $fileNameNew;
-                    // header("Location: ../my-profile.php");
-                    // exit();
+                    echo $id;
+                    header("Location: ../my-profile.php");
+                    exit();
                 }
                 else{
                     echo "Your file is too big";
