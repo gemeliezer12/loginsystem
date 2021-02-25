@@ -46,7 +46,14 @@ if(isset($_SESSION["idUsers"])){
                 ?>
                 <button class="profile">
                     <div class="label">
-                        <img class="picture" src="uploads/default.png" alt="">
+                        <img class="picture" src="uploads/<?php
+                        if(empty($data2["pictureProfiles"])){
+                            ?>default.png<?php
+                        }
+                        else{
+                            ?><?php echo $data2["pictureProfiles"];
+                        }
+                        ?>" alt="">
                         <p><?php echo $data["uidUsers"];?></p>
                     </div>
                     <i class="fas fa-caret-down fa-2x"></i>

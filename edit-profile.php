@@ -3,13 +3,24 @@ include "header.php";
 ?>
 
 <main>
-    <form class="container edit-profile" action="inc/edit-profile.inc.php" method="POST">
+    <form class="container edit-profile"  enctype="multipart/form-data" action="inc/edit-profile.inc.php" method="POST">
         <div class="cover">
         </div>
         <div class="info">
             <div class="picture">
-                <input id="upload-image" name="image" type="file">
-                <img id="uploaded-image" src="uploads/default.png" alt="">
+                <input id="upload-image" name="picture" type="file">
+                <?php
+                if(empty($data2["pictureProfiles"])){
+                    ?>
+                    <img id="uploaded-image" src="uploads/default.png" alt="">
+                    <?php
+                }
+                else{
+                    ?>
+                    <img id="uploaded-image" src="uploads/<?php echo $data2["pictureProfiles"]?>" alt="">
+                    <?php
+                }
+                ?>
             </div>
             <div class="input">
                 <label for="uid">Username</label>

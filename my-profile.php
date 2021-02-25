@@ -13,11 +13,11 @@ else{
             <div class="info">
                 <div class="picture">
                 <img src="uploads/<?php
-                    if(empty($data2["coverProfiles"])){
+                    if(empty($data2["pictureProfiles"])){
                         ?>default.png<?php
                     }
                     else{
-                        echo $data2["pictureProfiles"];
+                        ?><?php echo $data2["pictureProfiles"];
                     }
                     ?>" alt="">
                 </div>

@@ -155,6 +155,8 @@ nav .profile .label{
 
 nav .profile .picture{
     height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }
 
 nav .logo{
@@ -319,6 +321,7 @@ input{
 .picture img{
     width: 100%;
     height: 100%;
+    border-radius: 50%;
 }
 
 .edit-profile .info{
@@ -347,6 +350,7 @@ input{
 .edit-profile .cover input{
     position: absolute;
 }
+
 .edit-profile .picture input{
     width: 100px;
     height: 100px;position: absolute;

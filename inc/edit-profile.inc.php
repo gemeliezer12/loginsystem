@@ -3,12 +3,22 @@ session_start();
 include "dbh.inc.php";
 $id = $_SESSION["idUsers"];
 
-$folder = "uploads/";
-$image = $_FILES["image"]["name"];
-$path = $folder . $image;
 if(isset($_POST["edit-profile-submit"])){
     $uid = $_POST["uid"];
     $bio = $_POST["bio"];
+    $file = $_FILES["picture"];
+
+    $fileName = $file["name"];
+    $fileTmpName = $file["tmp_name"];
+    $fileSize = $file["size"];
+    $fileError = $file["error"];
+    $fileType = $file["type"];
+
+    $fileExt = explode(".", $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    $allowed = array("jpg", "jpeg", "png", "pdf");
+
 
     if(empty($_POST["uid"])){
 
@@ -19,7 +29,30 @@ if(isset($_POST["edit-profile-submit"])){
         $query->bindValue(2, $bio);
         $query->bindValue(3, $id);
         $query->execute();
-        header("Location: ../my-profile.php");
-        exit();
+        if(in_array($fileActualExt, $allowed)){
+            if($fileError === 0){
+                if($fileSize < 1000000){
+                    $fileNameNew = "profile".$id.".".$fileActualExt;
+                    $fileDestination = "../uploads/".$fileNameNew;
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                    $sql = $pdo->prepare("UPDATE profiles SET pictureProfiles=? WHERE uidUsers=?;");
+                    $sql->bindValue(1, $fileNameNew);
+                    $sql->bindValue(2, $id);
+                    $sql->execute();
+                    echo $fileNameNew;
+                    // header("Location: ../my-profile.php");
+                    // exit();
+                }
+                else{
+                    echo "Your file is too big";
+                }
+            }
+            else{
+                echo "There was an error";
+            }
+        }
+        else{
+            echo "You cannot upload files of this type!";
+        }
     }
 }
